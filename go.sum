@@ -1,0 +1,4 @@
+github.com/brycedarling/fixer-api-proxy v0.0.0-20200131175948-0a7e7869d687 h1:nKLeLsR3WDN2qRzlngEX76mb/UXeTJ0p0qa90ELB2bQ=
+github.com/brycedarling/fixer-api-proxy v0.0.0-20200131175948-0a7e7869d687/go.mod h1:dT8mujE5w/lx3mPTY7qthvg9N8w2C3hIoOwxdI6OlcQ=
+github.com/patrickmn/go-cache v2.1.0+incompatible h1:HRMgzkcYKYpi3C8ajMPV8OFXaaRUnok+kx1WdO15EQc=
+github.com/patrickmn/go-cache v2.1.0+incompatible/go.mod h1:3Qf8kWWT7OJRJbdiICTKqZju1ZixQ/KpMGzzAfe6+WQ=
