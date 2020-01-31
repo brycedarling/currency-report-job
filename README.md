@@ -26,4 +26,4 @@ The `base` flag can be set for the base currency provided to the Fixer API, it d
 
 *TODO:* add XLS file output support
 
-*TODO:* I didn't get to adding XLS output support, or storing in Google or Amazon storage on prod.
+*TODO:* store reports in Google or Amazon storage on prod
