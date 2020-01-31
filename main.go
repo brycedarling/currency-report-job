@@ -20,8 +20,8 @@ func main() {
 	var currencies string
 	flag.StringVar(&currencies, "currencies", "", "currencies for report job")
 
-	var output string
-	flag.StringVar(&output, "output", "CSV", "CSV, HTML, XLS, or JSON")
+	var outputs string
+	flag.StringVar(&outputs, "outputs", "CSV,HTML,JSON", "CSV, HTML, or JSON")
 
 	flag.Parse()
 
@@ -33,22 +33,25 @@ func main() {
 		log.Fatal(errors.New("missing currencies flag"))
 	}
 
-	output = strings.ToUpper(output)
-
-	if !(output == "CSV" || output == "HTML" || output == "XLS" || output == "JSON") {
-		log.Fatal(errors.New("output format must be CSV, HTML, XLS, or JSON"))
-	}
-
 	reports := fetchReports(currencies, base)
 
-	switch output {
-	case "CSV":
-		writeCSVReportFile(reports)
-	case "HTML":
-		writeHTMLReportFile(reports)
-	case "JSON":
-		writeJSONReportFile(reports)
-	case "XLS":
-		log.Fatal("xls is unsupported")
+	result := strings.Split(strings.ToUpper(outputs), ",")
+	for i := range result {
+		output := strings.TrimSpace(result[i])
+
+		if !(output == "CSV" || output == "HTML" || output == "JSON") {
+			log.Fatal(errors.New("output format must be CSV, HTML, or JSON"))
+		}
+
+		switch output {
+		case "CSV":
+			writeCSVReportFile(reports)
+		case "HTML":
+			writeHTMLReportFile(reports)
+		case "JSON":
+			writeJSONReportFile(reports)
+		case "XLS":
+			log.Fatal("xls is unsupported")
+		}
 	}
 }
