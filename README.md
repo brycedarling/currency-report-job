@@ -18,7 +18,7 @@ Run program:
 
 The `currencies` flag is a required comma separated list of currencies for the report job.
 
-The `outputs` flag can be set to a comma separated list of `CSV, `HTML`, or `JSON` - it defaults to all outputs `CSV,HTML,JSON`.
+The `outputs` flag can be set to a comma separated list of `CSV`, `HTML`, or `JSON` - it defaults to all outputs `CSV,HTML,JSON`.
 
 The `base` flag can be set for the base currency provided to the Fixer API, it defaults to `EUR`.
 
